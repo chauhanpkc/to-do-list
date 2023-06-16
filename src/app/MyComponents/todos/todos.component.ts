@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from '../../Todo';
 
 @Component({
@@ -7,7 +7,7 @@ import { Todo } from '../../Todo';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-
+  @Input() todo!: Todo;
   todos:Todo[];
   constructor(){
     this.todos =[
@@ -15,7 +15,7 @@ export class TodosComponent implements OnInit {
         sno:1,
         title: "This is title 1",
         desc: "Description 1",
-        active: true,
+        active: true
       },
       {
         sno:2,
